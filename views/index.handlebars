@@ -1,0 +1,56 @@
+<div class="container">
+    <div class="jumbotron">
+         <h1>Burgers!</h1><br>
+         <p>Welcome to Good Burger, home of the Good Burger Can we take your order?</p>
+    </div>
+</div>
+
+<div class="jumbotron">
+  <div class="row">
+    <div class="col">
+      <div class="card">
+        <h2>The Menu</h2><br>
+        <ul>
+          {{#each burgers}}
+          {{#unless devoured}}
+          {{> burger-block consumed=true}}
+          {{/unless}}
+          {{/each}}
+        </ul>
+      </div>
+    </div>
+
+    <div class="col">
+      <div class="card">
+        <h2>Blasts from the Past</h2><br>
+        <ul>
+          {{#each burgers}}
+          {{#if devoured}}
+          {{> burgers-block consumed=false}}
+          {{/if}}
+          {{/each}}
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <form class="form">
+      <div class="form-group">
+        <label for="newFlavor">
+          <h2>Suggest a new Krabby Patty!</h2>
+        </label>
+        <input type="text" id="newBurger" name="name">
+      </div>
+
+      <div class="form-group">
+        <label for="devoured">Is this suggestion for current or past offerings?</label>
+        <input type="radio" class="radio" name="devoured" value="0">Current
+        <input type="radio" class="radio" name="devoured" value="1" checked>Past
+      </div>
+      <button type="submit" class="btn" id="addBurger">Add Burger</button>
+
+
+    </form>
+  </div>
+</div>
