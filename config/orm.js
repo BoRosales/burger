@@ -82,9 +82,25 @@ updateOne: function(table, objColVals, condition, cb) {
 
         cb(result);
     });
+},
+
+delete: function(table, condition, cb) {
+    let queryString = "DELETE FROM " + table;
+    queryString += " WHERE ";
+    queryString += condition;
+
+    connection.query(queryString, function(err, result) {
+        if (err) {
+            throw err;
+        }
+
+        cb(result);
+    });
 }
-// POSSIBLE DELETE FUNCTION HERE
+
 };
 
 // Exports the ORM object to burger.js
 module.exports = orm;
+
+

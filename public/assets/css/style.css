@@ -1,0 +1,17 @@
+body {
+    background-image: url('https://images.unsplash.com/photo-1465799411029-5a317ff17837?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=3ac99b378017def71decb9bee22fd213&auto=format&fit=crop&w=1350&q=80');
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: 'Roboto Slab', serif;
+}
+
+.jumbotron {
+    background-color: rgb(255, 255, 255, 0.5);
+    text-align: center;
+}
+
+.card {
+    background-color: transparent;
+    border: transparent;
+}

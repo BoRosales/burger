@@ -17,9 +17,9 @@ router.get("/", function(req, res) {
 
 router.post("/api/burgers", function(req, res) {
     burger.insertOne([
-        "name", "devoured"
+        "burger_name", "devoured"
     ], [
-        req.body.name, req.body.devoured
+        req.body.burger_name, req.body.devoured
     ], function(result) {
         // Send back the ID of th new burger
         res.json({ id: result.insertId });
@@ -27,7 +27,7 @@ router.post("/api/burgers", function(req, res) {
 });
 
 router.put("/api/burgers/:id", function(req, res) {
-    let condition = "id =" + req.params.id
+    let condition = "id = " + req.params.id;
 
     console.log("condition", condition);
 
@@ -43,7 +43,19 @@ router.put("/api/burgers/:id", function(req, res) {
     });
 });
 
-// DELETE OPTION HERE POSSIBLY
+router.delete("/api/burgers/:id", function(req, res) {
+    let condition = "id = " + req.params.id;
+
+    burger.delete(condition, function(result) {
+        if (result.affectedRows === 0) {
+            return res.status(404).end();
+        } else {
+            res.status(200).end();
+        }
+    });
+});
+
+
 
 
 // EXPORTS TO SERVER.JS
