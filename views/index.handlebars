@@ -22,7 +22,7 @@
 
     <div class="col">
       <div class="card">
-        <h2>Previous orders</h2><br>
+        <h2>Previous Orders</h2><br>
         <ul>
           {{#each burgers}}
           {{#if devoured}}
@@ -38,7 +38,7 @@
     <form class="form">
       <div class="form-group">
         <label for="newFlavor">
-          <h2>Suggest a new Krabby Patty!</h2>
+          <h2>Suggest a new burger!</h2>
         </label>
         <input type="text" id="newBurger" name="name">
       </div>
@@ -46,7 +46,7 @@
       <div class="form-group">
         <label for="devoured">Enter the name of the burger you want to eat.</label>
         <input type="radio" class="radio" name="devoured" value="0">Hot item
-        <input type="radio" class="radio" name="devoured" value="1" checked>Previously ordered
+        <input type="radio" class="radio" name="devoured" value="1" checked>Previously Ordered
       </div>
       <button type="submit" class="btn" id="addBurger">Add Burger</button>
 

@@ -1,10 +1,10 @@
 $(function() {
     $(".change-devoured").on("click", function(event) {
-      var id = $(this).data("id");
-      var newDev = $(this).data("newdev");
+      let id = $(this).data("id");
+      let newdev = $(this).data("newdev");
   
-      var newDevState = {
-        devoured: newDev
+      let newDevState = {
+        devoured: newdev
       };
   
       // Send the PUT request.
@@ -13,7 +13,7 @@ $(function() {
         data: newDevState
       }).then(
         function() {
-          console.log("changed devoured to", newDev);
+          console.log("changed devoured to", newdev);
           // Reload the page to get the updated list
           location.reload();
         }
@@ -24,7 +24,7 @@ $(function() {
       // Make sure to preventDefault on a submit event.
       event.preventDefault();
   
-      var newBurger = {
+      let newBurger = {
         burger_name: $("#newBurger").val().trim(),
         devoured: $("[name=devoured]:checked").val().trim()
       };
@@ -43,7 +43,7 @@ $(function() {
     });
   
     $(".delete-burger").on("click", function(event) {
-      var id = $(this).data("id");
+      let id = $(this).data("id");
   
       // Send the DELETE request.
       $.ajax("/api/burgers/" + id, {
